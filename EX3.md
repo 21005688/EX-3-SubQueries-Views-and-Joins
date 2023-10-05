@@ -69,6 +69,7 @@ INSERT INTO DEPT (DEPTNO, DNAME, LOC) VALUES (40, 'OPERATIONS', 'BOSTON');
 
 
 ### QUERY:
+select ename from emp where sal>(select sal from emp where empno=7566);
 
 
 ### OUTPUT:
@@ -76,6 +77,7 @@ INSERT INTO DEPT (DEPTNO, DNAME, LOC) VALUES (40, 'OPERATIONS', 'BOSTON');
 ### Q2) List the ename,job,sal of the employee who get minimum salary in the company.
 
 ### QUERY:
+select ename,job,sal from emp where sal=(select min(sal) from emp);
 
 
 ### OUTPUT:
@@ -83,6 +85,7 @@ INSERT INTO DEPT (DEPTNO, DNAME, LOC) VALUES (40, 'OPERATIONS', 'BOSTON');
 ### Q3) List ename, job of the employees who work in deptno 10 and his/her job is any one of the job in the department ‘SALES’.
 
 ### QUERY:
+SELECT ENAME, JOB FROM EMP WHERE DEPTNO = 10 AND JOB IN (SELECT JOB FROM EMP WHERE JOB='SALESMAN');
 
 
 ### OUTPUT:
@@ -91,21 +94,23 @@ INSERT INTO DEPT (DEPTNO, DNAME, LOC) VALUES (40, 'OPERATIONS', 'BOSTON');
 ### Q4) Create a view empv5 (for the table emp) that contains empno, ename, job of the employees who work in dept 10.
 
 ### QUERY:
-
+create view emv5 as select empno,ename,job from emp where deptno=10;
+select ename,empno,job from emv5;
 
 ### OUTPUT:
 
 ### Q5) Create a view with column aliases empv30 that contains empno, ename, sal of the employees who work in dept 30. Also display the contents of the view.
 
 ### QUERY:
-
+create view empv30 as select empno,ename,sal from emp where deptno=30;
+select ename,empno,sal from empv30;
 
 ### OUTPUT:
 
 ### Q6) Update the view empv5 by increasing 10% salary of the employees who work as ‘CLERK’. Also confirm the modifications in emp table
 
 ### QUERY:
-
+update empv5 set sal=sal+(sal*0.1) where job='clerk';
 
 ### OUTPUT:
 
