@@ -1,5 +1,10 @@
-# EX 3 SubQueries, Views and Joins 
+## EX 3 SubQueries, Views and Joins 
 
+## DATE:18:8:23
+## AIM:
+To create a manager database and execute DML queries using SQL.
+## DML:
+The SQL commands that deal with the manipulation of data present in the database belong to DML or Data Manipulation Language and this includes most of the SQL statements. It is the component of the SQL statement that controls access to data and to the database. Basically, DCL statements are grouped with DML statements.
 
 ## Create employee Table
 ```sql
@@ -180,7 +185,6 @@ select customer1.cust_name as "CUSTOMER NAME" , customer1.city as "CUSTOMER CITY
 
 ### QUERY:
 select * from salesman1 LEFT JOIN customer1 on salesman1.salesman_id=customer1.salesman_id;
-
 
 ### OUTPUT:
 ![10](https://github.com/21005688/EX-3-SubQueries-Views-and-Joins/assets/94747031/4c7e8728-b221-43cf-a9ae-fb80cd90b900)
